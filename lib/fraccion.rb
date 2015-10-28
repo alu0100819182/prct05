@@ -8,6 +8,10 @@ class Fracion
 	def mincommult(a,b)
 		z = a / maycomdiv(a,b) * b
     end
+    
+    def to_s
+    	"#@numerador/#@denominador"
+   	end
 	
 	def initialize(num,denom)
 		raise TypeError, "Denominator may not be zero" if denom.eql? 0
