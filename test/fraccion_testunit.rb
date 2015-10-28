@@ -11,7 +11,7 @@ class TestPoint < Test::Unit::TestCase
         assert_equal("7/6", (@fraccion1 + @fraccion2).to_s)
         assert_equal("1/6", (@fraccion1 - @fraccion2).to_s)
         assert_equal("1/3", (@fraccion1 * @fraccion2).to_s)
-        assert_equal("2", (@fraccion1 : @fraccion2).to_s)
+        assert_equal("2", (@fraccion1 / @fraccion2).to_s)
     end
     
     
