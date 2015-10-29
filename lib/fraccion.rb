@@ -1,24 +1,25 @@
 class Fracion
-	attr reader :numerador, :denominador
+	attr_reader :numerador, :denominador
 	
 	def maycomdiv(a,b)
-		b!=0? a: gcd(b, a%b)
+		b==0? a: maycomdiv(b, a%b)
 	end
 	
 	def mincommult(a,b)
-		z = a / maycomdiv(a,b) * b
-    end
+		b = a / maycomdiv(a,b) * b
+	end
     
     def to_s
     	"#@numerador/#@denominador"
-   	end
+    end
+    
 	
 	def initialize(num,denom)
 		raise TypeError, "Denominator may not be zero" if denom.eql? 0
 		aux = maycomdiv(num,denom)
-		@numerador = num/d; #obtengo el minimo
-		@denominador = denom/d;
-    end
+		@numerador = num/aux; #obtengo el minimo
+		@denominador = denom/aux;
+	end
    
    def + (other)
    		mcmden = mincommult(@denominador, other.denominador)
@@ -40,5 +41,5 @@ class Fracion
    
    def / (other)
    		Fracion.new(@numerador*other.denominador, @denominador*other.numerador)
-   
-   
+   end   
+end

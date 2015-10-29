@@ -1,4 +1,3 @@
-$:.unshift File.dirname(__FILE__) + 'lib'
 
 task :default => :tu
 
